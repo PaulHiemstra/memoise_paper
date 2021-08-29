@@ -25,9 +25,9 @@ class Tictoe:
     def get_value(self):
         sums = self.get_sums_of_board()
         if self.size in sums:
-            return 10
+            return 10 - np.count_nonzero(self.board)
         elif -self.size in sums:
-            return -10
+            return -10 + np.count_nonzero(self.board)
         else:
             return 0
 
